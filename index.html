@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pump.fun n8n Automation Architect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-inter">
+    <header class="relative">
+        <div class="hero h-64 relative overflow-hidden">
+            <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+                 alt="Architect Header" 
+                 class="w-full h-full object-cover filter brightness-50">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <h1 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-bold text-white text-center">
+                pump.fun n8n Automation Architect
+            </h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+        <div class="flex-grow">
+            <button id="fetchButton" class="mb-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center gap-2">
+                <i class="fas fa-sync-alt"></i>
+                Fetch Architect Output
+            </button>
+
+            <div id="spinner" class="hidden flex items-center justify-center p-4">
+                <i class="fas fa-circle-notch fa-spin text-blue-600 text-3xl"></i>
+            </div>
+
+            <div id="output" class="space-y-6">
+                <section id="persona" class="bg-white rounded-lg shadow-md p-6 transition-all duration-300">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-user-tie text-blue-600"></i>
+                        Persona
+                    </h2>
+                    <p id="persona-text" class="text-gray-600"></p>
+                </section>
+
+                <section id="mission" class="bg-white rounded-lg shadow-md p-6 transition-all duration-300">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-bullseye text-blue-600"></i>
+                        Mission
+                    </h2>
+                    <p id="mission-text" class="text-gray-600"></p>
+                </section>
+
+                <section id="phase-description" class="bg-white rounded-lg shadow-md p-6 transition-all duration-300">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-tasks text-blue-600"></i>
+                        Phase Description
+                    </h2>
+                    <p id="phase-description-text" class="text-gray-600"></p>
+                </section>
+
+                <section id="actions" class="bg-white rounded-lg shadow-md p-6 transition-all duration-300">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                        <i class="fas fa-code text-blue-600"></i>
+                        n8n Actions (Phase 1)
+                    </h2>
+                    <pre id="actions-text" class="bg-gray-50 p-4 rounded-lg overflow-x-auto text-sm"></pre>
+                </section>
+            </div>
+        </div>
+
+        <aside id="history" class="lg:w-80 bg-white rounded-lg shadow-md p-6 h-fit">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                <i class="fas fa-history text-blue-600"></i>
+                Output History
+            </h3>
+            <ul id="history-list" class="space-y-3">
+                <!-- History items will be appended here -->
+            </ul>
+        </aside>
+    </main>
+
+    <div id="error-message" class="hidden fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg">
+        <i class="fas fa-exclamation-circle mr-2"></i>
+        <span id="error-text"></span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@gradio/client@2.3.1/dist/index.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
