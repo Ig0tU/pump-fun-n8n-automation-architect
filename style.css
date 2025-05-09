@@ -1,0 +1,96 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #f9fafb;
+    color: #333;
+}
+
+header .hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+header .hero img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0.5);
+}
+
+header .hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+#output {
+    flex: 3;
+    min-width: 300px;
+}
+
+.card, section {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#history {
+    flex: 1;
+    min-width: 250px;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+#spinner {
+    font-size: 1.5rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#error-message {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #dc2626;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+    z-index: 1000;
+}
